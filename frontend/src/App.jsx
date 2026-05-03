@@ -13,7 +13,7 @@ function App() {
   const [tasks, setTasks] = useState([]);
 
   const signup = async () => {
-    const res = await fetch("team-task-manager-production-f04b.up.railway.app/api/auth/signup", {
+    const res = await fetch("https://team-task-manager-production-f04b.up.railway.app/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, password, role: "Admin" }),
@@ -24,7 +24,7 @@ function App() {
   };
 
   const login = async () => {
-    const res = await fetch("team-task-manager-production-f04b.up.railway.app/api/auth/login", {
+    const res = await fetch("htps://team-task-manager-production-f04b.up.railway.app/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -40,13 +40,13 @@ function App() {
   };
 
   const getTasks = async () => {
-    const res = await fetch("team-task-manager-production-f04b.up.railway.app/api/tasks");
+    const res = await fetch("https://team-task-manager-production-f04b.up.railway.app/api/tasks");
     const data = await res.json();
     setTasks(data);
   };
 
   const addTask = async () => {
-    const res = await fetch("team-task-manager-production-f04b.up.railway.app/api/tasks/add", {
+    const res = await fetch("https://team-task-manager-production-f04b.up.railway.app/api/tasks/add", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title, dueDate }),
@@ -61,7 +61,7 @@ function App() {
   };
 
   const completeTask = async (id) => {
-    const res = await fetch(`team-task-manager-production-f04b.up.railway.app/api/tasks/complete/${id}`, {
+    const res = await fetch(`https://team-task-manager-production-f04b.up.railway.app/api/tasks/complete/${id}`, {
       method: "PUT",
     });
 
@@ -71,7 +71,7 @@ function App() {
   };
 
   const deleteTask = async (id) => {
-    const res = await fetch(`team-task-manager-production-f04b.up.railway.app/api/tasks/delete/${id}`, {
+    const res = await fetch(`https://team-task-manager-production-f04b.up.railway.app/api/tasks/delete/${id}`, {
       method: "DELETE",
     });
 
