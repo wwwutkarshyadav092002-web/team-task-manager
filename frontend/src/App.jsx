@@ -24,7 +24,7 @@ function App() {
   };
 
   const login = async () => {
-    const res = await fetch("htps://team-task-manager-production-f04b.up.railway.app/api/auth/login", {
+    const res = await fetch("https://team-task-manager-production-f04b.up.railway.app/api/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
